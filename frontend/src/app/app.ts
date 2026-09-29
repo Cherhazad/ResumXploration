@@ -1,9 +1,14 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import {Hello} from './hello/hello';
+import {Resume} from './resume/resume';
+import { CardModule } from 'primeng/card';
+import {ThemeToggle} from './theme-toggle/theme-toggle';
 
 @Component({
-  imports: [RouterOutlet, Hello],
+  imports: [
+    Resume,
+    CardModule,
+    ThemeToggle
+  ],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',

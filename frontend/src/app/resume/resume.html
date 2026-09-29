@@ -1,0 +1,8 @@
+<div class="max-w-3/4 mx-auto grid grid-cols-1 md:grid-cols-5">
+  @for (section of sections; track section) {
+    <p-card class="m-4 dark:bg-gray-700!" header="{{section.header}}" subheader="{{section.content}}">
+    </p-card>
+  } @empty {
+    <p>Aucune section</p>
+  }
+</div>
