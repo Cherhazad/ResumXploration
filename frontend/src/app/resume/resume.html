@@ -1,7 +1,19 @@
-<div class="max-w-3/4 mx-auto grid grid-cols-1 md:grid-cols-5">
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
   @for (section of sections; track section) {
-    <p-card class="m-4 dark:bg-gray-700!" header="{{section.header}}" subheader="{{section.content}}">
-    </p-card>
+    <div
+      class="glass-card"
+      [ngClass]="{
+        'col-span-1': section.colSpan === 1,
+        'col-span-2': section.colSpan === 2,
+        'col-span-3': section.colSpan === 3,
+        'row-span-1': section.rowSpan === 1,
+        'row-span-2': section.rowSpan === 2,
+      }"
+    >
+      <p-card class="m-4 dark:bg-gray-700!" [header]="section.header">
+        {{ section.content }}
+      </p-card>
+    </div>
   } @empty {
     <p>Aucune section</p>
   }
