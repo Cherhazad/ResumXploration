@@ -1,20 +1,52 @@
-<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
-  @for (section of sections; track section) {
-    <div
-      class="glass-card"
-      [ngClass]="{
-        'col-span-1': section.colSpan === 1,
-        'col-span-2': section.colSpan === 2,
-        'col-span-3': section.colSpan === 3,
-        'row-span-1': section.rowSpan === 1,
-        'row-span-2': section.rowSpan === 2,
+<div class="mx-auto mt-6 px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12 pb-16">
+  <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    @for (section of sections; track section) {
+      <div
+        class="glass-card"
+        [ngClass]="{
+        'md:col-span-1': section.colSpan === 1,
+        'md:col-span-2': section.colSpan === 2,
+        'md:col-span-3': section.colSpan === 3,
+        'md:row-span-1': section.rowSpan === 1,
+        'md:row-span-2': section.rowSpan === 2,
       }"
-    >
-      <p-card class="m-4 dark:bg-gray-700!" [header]="section.header">
-        {{ section.content }}
-      </p-card>
-    </div>
-  } @empty {
-    <p>Aucune section</p>
-  }
+      >
+        <p-card
+          class="dark:bg-gray-700! h-full w-full"
+          [header]="section.header"
+          [pt]="{
+            title: {
+              class: section.headerSize === 'xl' ? 'text-3xl!' :
+                     section.headerSize === 'sm' ? 'text-sm!' :
+                     ''
+            }
+          }"
+        >
+          @switch (section.type) {
+            @case ('text') {
+              <p>{{ section.content }}</p>
+            }
+            @case ('icon') {
+              <i [class]="section.icon" class="text-4xl"></i>
+            }
+            @case ('image') {
+              @if (section.image) {
+                <div class="relative w-full h-64 sm:h-80 md:h-96">
+                  <img
+                    [ngSrc]="section.image"
+                    class="object-cover object-top rounded-xl transition-transform duration-300 hover:scale-110"
+                    alt=""
+                    fill
+                    priority
+                  />
+                </div>
+              }
+            }
+          }
+        </p-card>
+      </div>
+    } @empty {
+      <p>Aucune section</p>
+    }
+  </div>
 </div>

@@ -3,4 +3,13 @@
 @import "tailwindcss-primeui";
 @import "primeicons/primeicons.css";
 
-@custom-variant dark (&:where(.dark, .dark *));
+@variant dark (&:where(.dark, .dark *));
+
+.glass-card {
+  @apply bg-green-800/10 dark:bg-gray-800/50
+  backdrop-blur-md
+  rounded-2xl
+  p-5
+  shadow-lg
+  border border-white/40 dark:border-white/10;
+}
