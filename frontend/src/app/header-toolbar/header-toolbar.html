@@ -1,0 +1,55 @@
+<p-toolbar>
+  <ng-template #start>
+    <div class="flex items-center gap-2">
+      <p-avatar image="/profilePicture.jpeg" shape="circle"/>
+      <p>Chérhazad BOUSTANI</p>
+    </div>
+  </ng-template>
+  <ng-template #center>
+    <a
+      pButton
+      iconOnly
+      class="mr-2"
+      variant="text"
+      severity="secondary"
+      href="https://www.linkedin.com/in/chérhazad-boustani"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <i class="pi pi-linkedin text-xl!"></i>
+    </a>
+    <a
+      pButton
+      iconOnly
+      class="mr-2"
+      variant="text"
+      severity="secondary"
+      href="https://github.com/Cherhazad"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <i class="pi pi-github text-xl!"></i>
+    </a>
+    <button pButton iconOnly variant="text" severity="secondary" pTooltip="Download my resume">
+      <svg data-p-icon="upload" class="w-5! h-5!" (click)="downloadPdf()"/>
+    </button>
+  </ng-template>
+  <ng-template #end>
+    <div class="flex items-center gap-4">
+      <div class="flex items-center gap-2">
+        <label for="switch">Fr</label>
+        <p-toggleswitch
+          [ngModel]="languageService.isEnglish()"
+          (ngModelChange)="languageService.isEnglish.set($event)"
+          inputId="switch"
+          [pt]="{
+          slider: { class: 'bg-gray-300/70! rounded-md! dark:bg-slate-700/80! rounded-md!' },
+          handle: { class: 'bg-gray-500! dark:bg-slate-400!'},
+        }"
+        />
+        <label for="switch">Eng</label>
+      </div>
+      <app-theme-toggle></app-theme-toggle>
+    </div>
+  </ng-template>
+</p-toolbar>
