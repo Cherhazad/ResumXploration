@@ -1,13 +1,13 @@
-import { Component, signal } from '@angular/core';
+import {Component, signal} from '@angular/core';
 import {Resume} from './resume/resume';
-import { CardModule } from 'primeng/card';
-import {ThemeToggle} from './theme-toggle/theme-toggle';
+import {CardModule} from 'primeng/card';
+import {HeaderToolbar} from './header-toolbar/header-toolbar';
 
 @Component({
   imports: [
     Resume,
     CardModule,
-    ThemeToggle
+    HeaderToolbar
   ],
   selector: 'app-root',
   styleUrl: './app.css',

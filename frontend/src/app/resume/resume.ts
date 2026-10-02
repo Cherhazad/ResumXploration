@@ -1,8 +1,9 @@
-import {Component} from '@angular/core';
+import {Component, computed, inject, input, InputSignal} from '@angular/core';
 import {Card} from 'primeng/card';
 import {Avatar} from 'primeng/avatar';
 import {NgClass, NgOptimizedImage} from '@angular/common';
 import {SafeValue} from '@angular/platform-browser';
+import {LanguageService} from '../language.service';
 
 type CardType = 'text' | 'icon' | 'image'
 
@@ -19,6 +20,8 @@ interface CardDetails {
   color?: 'default' | 'primary' | 'success' | 'warning'
 }
 
+type LangType = 'fr' | 'eng';
+
 @Component({
   imports: [
     Card,
@@ -31,7 +34,15 @@ interface CardDetails {
 })
 
 export class Resume {
-  sections: CardDetails[] = [
+  languageService = inject(LanguageService);
+
+  sections = computed(() =>
+    this.languageService.isEnglish()
+      ? this.sectionsEng
+      : this.sectionsFr
+  );
+
+  sectionsEng: CardDetails[] = [
     {
       id: "skills",
       header: "Skills",
@@ -43,7 +54,7 @@ export class Resume {
     {
       id: "formation",
       header: "Formations",
-      content: "I have a diploma of Applications Conception and Full-Stack Development but also a Master's degree in Plant biology",
+      content: "I have a degree in Full-Stack Web Application Design and Development and a master's degree in Plant Biology",
       type: 'text',
       colSpan: 1,
       rowSpan: 1
@@ -59,7 +70,7 @@ export class Resume {
     {
       id: "hobbies",
       header: "Hobbies",
-      content: "I love singing, making music on my computer, playing badminton and making content",
+      content: "I love singing, making music on my computer, playing badminton, playing video games and making content",
       type: 'text',
       colSpan: 1,
       rowSpan: 1
@@ -67,7 +78,7 @@ export class Resume {
     {
       id: "experience",
       header: "Experiences",
-      content: "As a junior, I have one year and two months of full time full-stack dev",
+      content: "As a junior, I have one year and two months experience as a full time full-stack web dev",
       type: 'text',
       colSpan: 1,
       rowSpan: 2
@@ -101,6 +112,82 @@ export class Resume {
       id: "language",
       header: "Languages",
       content: "I speak French (mother tongue), English (intermediate)",
+      type: 'text',
+      colSpan: 1,
+      rowSpan: 1
+    },
+  ]
+
+  sectionsFr: CardDetails[] = [
+    {
+      id: "compétences",
+      header: "Compétences",
+      content: "Back (TypeScript, NestJS, Java, Spring Boot), Front (TypeScript: Nuxt.js, Vue.js, Angular)",
+      type: 'text',
+      colSpan: 1,
+      rowSpan: 1
+    },
+    {
+      id: "formation",
+      header: "Formations",
+      content: "J'ai un diplôme de Concepteur Développeur d'Applications Web Full Stack et un Master en Biologie des Plantes",
+      type: 'text',
+      colSpan: 1,
+      rowSpan: 1
+    },
+    {
+      id: "information",
+      header: "Informations",
+      content: "Je vis à Montpellier, j'ai le permis B et suis véhiculée, je peux faire du travail hybride (télétravail & sur site)",
+      type: 'text',
+      colSpan: 1,
+      rowSpan: 1
+    },
+    {
+      id: "intérêts",
+      header: "Centres d'intérêts",
+      content: "J'adore chanter, faire de la musique sur mon ordinateur, jouer au badminton, aux jeux vidéos et créer du contenu",
+      type: 'text',
+      colSpan: 1,
+      rowSpan: 1
+    },
+    {
+      id: "expérience",
+      header: "Expériences",
+      content: "En tant que junior, j'ai une expérience d'un an et deux mois en tant que Développeuse Web Full Stack à temps plein",
+      type: 'text',
+      colSpan: 1,
+      rowSpan: 2
+    },
+    {
+      id: "profilePicture",
+      header: "",
+      type: 'image',
+      image: "/profilePicture.jpeg",
+      colSpan: 1,
+      rowSpan: 2
+    },
+    {
+      id: "profil",
+      header: "Chérhazad BOUSTANI",
+      content: "Développeuse junior Full Stack TypeScript",
+      type: 'text',
+      headerSize: 'xl',
+      colSpan: 2,
+      rowSpan: 3
+    },
+    {
+      id: "typeContrat",
+      header: "Type de contrat",
+      content: "Je cherche un contrat de type CDI & à temps plein",
+      type: 'text',
+      colSpan: 1,
+      rowSpan: 1
+    },
+    {
+      id: "langue",
+      header: "Langues",
+      content: "Je parle français (langue maternelle), anglais (intermédiaire)",
       type: 'text',
       colSpan: 1,
       rowSpan: 1
