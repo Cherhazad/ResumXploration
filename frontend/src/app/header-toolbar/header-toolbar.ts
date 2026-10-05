@@ -10,7 +10,7 @@ import {Upload} from '@primeicons/angular/upload';
 import {ToggleSwitch} from 'primeng/toggleswitch';
 import {FormsModule} from '@angular/forms';
 import {Tooltip} from 'primeng/tooltip';
-import {LanguageService} from '../language.service';
+import {LanguageService} from '../shared/services/language.service';
 
 @Component({
   imports: [
@@ -32,7 +32,7 @@ import {LanguageService} from '../language.service';
 })
 export class HeaderToolbar {
   protected languageService = inject(LanguageService);
-  
+
   downloadPdf() {
     const link = document.createElement('a')
     link.download = 'Résumé Chérhazad Boustani.pdf'

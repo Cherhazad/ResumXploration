@@ -1,0 +1,33 @@
+<div id="experiences" class="mx-auto mt-6 px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12 pb-16">
+  <p class="text-2xl">Expériences professionnelles</p>
+  <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
+    @for (exp of experiences(); track exp) {
+      <p-card
+        class="dark:bg-gray-700! h-full w-full"
+        [header]="exp.header"
+        [subheader]="exp.subHeader"
+        [pt]="{
+            title: {
+              class: exp.headerSize === 'xl' ? 'text-3xl!' :
+                     exp.headerSize === 'sm' ? 'text-sm!' :
+                     ''
+            },
+            root: { class: 'h-full flex flex-col' },
+            body: { class: 'flex flex-col flex-1' },
+            content: { class: 'flex-1' }
+          }"
+      >
+        <p [innerHTML]="exp.content"></p>
+
+        <ng-template #footer>
+          @if (exp.footerContent) {
+            @for (tag of exp.footerContent; track tag) {
+              <p-tag class="my-1 mr-1 text-xs!" severity="info" [value]="tag"/>
+            }
+          }
+        </ng-template>
+      </p-card>
+    }
+  </div>
+</div>
+
