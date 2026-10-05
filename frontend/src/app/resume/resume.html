@@ -12,7 +12,8 @@
       }"
       >
         <p-card
-          class="dark:bg-gray-700! h-full w-full"
+          class="dark:bg-gray-700! h-full w-full cursor-pointer"
+          (click)="onCardClick(section.id)"
           [header]="section.header"
           [pt]="{
             title: {
@@ -24,7 +25,7 @@
         >
           @switch (section.type) {
             @case ('text') {
-              <p>{{ section.content }}</p>
+              <p [innerHTML]="section.content"></p>
             }
             @case ('icon') {
               <i [class]="section.icon" class="text-4xl"></i>

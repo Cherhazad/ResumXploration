@@ -1,24 +1,9 @@
-import {Component, computed, inject, input, InputSignal} from '@angular/core';
+import {Component, computed, inject} from '@angular/core';
 import {Card} from 'primeng/card';
-import {Avatar} from 'primeng/avatar';
 import {NgClass, NgOptimizedImage} from '@angular/common';
-import {SafeValue} from '@angular/platform-browser';
-import {LanguageService} from '../language.service';
-
-type CardType = 'text' | 'icon' | 'image'
-
-interface CardDetails {
-  id: string
-  header: string
-  content?: string
-  type: CardType
-  colSpan?: number
-  rowSpan?: number
-  icon?: string
-  image?: string | SafeValue
-  headerSize?: 'sm' | 'md' | 'lg' | 'xl'
-  color?: 'default' | 'primary' | 'success' | 'warning'
-}
+import {LanguageService} from '../shared/services/language.service';
+import {CardDetails} from '../shared/interfaces/card-details.interface';
+import {ScrollService} from '../shared/services/scroll.service';
 
 type LangType = 'fr' | 'eng';
 
@@ -35,12 +20,17 @@ type LangType = 'fr' | 'eng';
 
 export class Resume {
   languageService = inject(LanguageService);
+  scrollService = inject(ScrollService);
 
   sections = computed(() =>
     this.languageService.isEnglish()
       ? this.sectionsEng
       : this.sectionsFr
   );
+
+  onCardClick(targetId: string): void {
+    this.scrollService.scrollTo(targetId)
+  }
 
   sectionsEng: CardDetails[] = [
     {
@@ -52,7 +42,7 @@ export class Resume {
       rowSpan: 1
     },
     {
-      id: "formation",
+      id: "formations",
       header: "Formations",
       content: "I have a degree in Full-Stack Web Application Design and Development and a master's degree in Plant Biology",
       type: 'text',
@@ -76,9 +66,9 @@ export class Resume {
       rowSpan: 1
     },
     {
-      id: "experience",
+      id: "experiences",
       header: "Experiences",
-      content: "As a junior, I have one year and two months experience as a full time full-stack web dev",
+      content: "I have one year and two months experience as a full time full-stack web dev </br></br> I also had a variety of experiences in sales and consulting, in retail, and as a dance instructor while I was in school",
       type: 'text',
       colSpan: 1,
       rowSpan: 2
@@ -120,7 +110,7 @@ export class Resume {
 
   sectionsFr: CardDetails[] = [
     {
-      id: "compétences",
+      id: "skills",
       header: "Compétences",
       content: "Back (TypeScript, NestJS, Java, Spring Boot), Front (TypeScript: Nuxt.js, Vue.js, Angular)",
       type: 'text',
@@ -128,7 +118,7 @@ export class Resume {
       rowSpan: 1
     },
     {
-      id: "formation",
+      id: "formations",
       header: "Formations",
       content: "J'ai un diplôme de Concepteur Développeur d'Applications Web Full Stack et un Master en Biologie des Plantes",
       type: 'text',
@@ -144,7 +134,7 @@ export class Resume {
       rowSpan: 1
     },
     {
-      id: "intérêts",
+      id: "hobbies",
       header: "Centres d'intérêts",
       content: "J'adore chanter, faire de la musique sur mon ordinateur, jouer au badminton, aux jeux vidéos et créer du contenu",
       type: 'text',
@@ -152,9 +142,9 @@ export class Resume {
       rowSpan: 1
     },
     {
-      id: "expérience",
+      id: "experiences",
       header: "Expériences",
-      content: "En tant que junior, j'ai une expérience d'un an et deux mois en tant que Développeuse Web Full Stack à temps plein",
+      content: "J'ai une expérience d'un an et deux mois en tant que Développeuse Web Full Stack à temps plein </br></br> J'ai également eu diverses expériences en vente et conseil, en grande distribution ou encore en tant que professeure de danse en parallèle de mes études",
       type: 'text',
       colSpan: 1,
       rowSpan: 2
@@ -168,7 +158,7 @@ export class Resume {
       rowSpan: 2
     },
     {
-      id: "profil",
+      id: "profile",
       header: "Chérhazad BOUSTANI",
       content: "Développeuse junior Full Stack TypeScript",
       type: 'text',
@@ -177,7 +167,7 @@ export class Resume {
       rowSpan: 3
     },
     {
-      id: "typeContrat",
+      id: "contractType",
       header: "Type de contrat",
       content: "Je cherche un contrat de type CDI & à temps plein",
       type: 'text',
@@ -185,7 +175,7 @@ export class Resume {
       rowSpan: 1
     },
     {
-      id: "langue",
+      id: "language",
       header: "Langues",
       content: "Je parle français (langue maternelle), anglais (intermédiaire)",
       type: 'text',
