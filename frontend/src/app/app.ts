@@ -3,13 +3,15 @@ import {Resume} from './resume/resume';
 import {CardModule} from 'primeng/card';
 import {HeaderToolbar} from './header-toolbar/header-toolbar';
 import {Experiences} from './experiences/experiences';
+import {Skills} from './skills/skills';
 
 @Component({
   imports: [
     Resume,
     CardModule,
     HeaderToolbar,
-    Experiences
+    Experiences,
+    Skills
   ],
   selector: 'app-root',
   styleUrl: './app.css',

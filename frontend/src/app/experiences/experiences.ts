@@ -42,8 +42,6 @@ export class Experiences implements OnInit, OnDestroy {
       subHeader: "South Watts - September 2024 to November 2025",
       content: "Web app for HR, contract creation and edition, articles library",
       type: "text",
-      colSpan: 1,
-      rowSpan: 1,
       footerContent: ["Developement", "Full-Stack", "Work Study Program", "TypeScript"]
     },
     {
@@ -52,8 +50,6 @@ export class Experiences implements OnInit, OnDestroy {
       subHeader: "IPSIM & PHIM - 2017 to 2023",
       content: "Biostatistic analysis on RStudio, model plant, bacteria and yeasts cultures",
       type: "text",
-      colSpan: 1,
-      rowSpan: 1,
       footerContent: ["Reasearch", "Plant Biology", "Internship"]
     },
     {
@@ -62,8 +58,6 @@ export class Experiences implements OnInit, OnDestroy {
       subHeader: "Histoire d'Or - July to September 2020 + extras",
       content: "Sales, consulting, ear piercing, Customer service, handling extra orders at two other locations during Black Friday and the Christmas season",
       type: "text",
-      colSpan: 1,
-      rowSpan: 1,
       footerContent: ["Jewelry", "Summer Job", "Sales Consulting"]
     },
     {
@@ -72,8 +66,6 @@ export class Experiences implements OnInit, OnDestroy {
       subHeader: "Bleu Libellule - July 2020",
       content: "Sales, consulting, stocking shelves, facing",
       type: "text",
-      colSpan: 1,
-      rowSpan: 1,
       footerContent: ["Hair Products Wholesaler", "Summer Job", "Sales Consulting"]
     },
     {
@@ -82,8 +74,6 @@ export class Experiences implements OnInit, OnDestroy {
       subHeader: "Sabor Danza - September 2018 to November 2019",
       content: "4h of instruction per week during the evening",
       type: "text",
-      colSpan: 1,
-      rowSpan: 1,
       footerContent: ["Instruction", "Dance school"]
     },
     {
@@ -92,8 +82,6 @@ export class Experiences implements OnInit, OnDestroy {
       subHeader: "Super U - September 2018 à January 2019",
       content: "Productivity (number of items per minute per customer), cash flow management, customer loyalty",
       type: "text",
-      colSpan: 1,
-      rowSpan: 1,
       footerContent: ["Cashier", "Retail Industry"]
     },
     {
@@ -102,8 +90,6 @@ export class Experiences implements OnInit, OnDestroy {
       subHeader: "Brioche Dorée - June 2017 à August 2017",
       content: "Sales, preparing drinks and crepes, washing dishes, table service",
       type: "text",
-      colSpan: 1,
-      rowSpan: 1,
       footerContent: ["Sandwich Shop", "Sales", "Preparation", "Fast Food"]
     },
     {
@@ -112,8 +98,6 @@ export class Experiences implements OnInit, OnDestroy {
       subHeader: "Carrefour Market - July 2016 à August 2016",
       content: "Productivity (number of items per minute per customer), cash flow management, customer loyalty",
       type: "text",
-      colSpan: 1,
-      rowSpan: 1,
       footerContent: ["Cashier", "Retail Industry"]
     }
   ]
@@ -125,8 +109,6 @@ export class Experiences implements OnInit, OnDestroy {
       subHeader: "South Watts - Septembre 2024 à Novembre 2025",
       content: "Application web pour les RH, gestion de contract et génération, bibliothèque d'articles",
       type: "text",
-      colSpan: 1,
-      rowSpan: 1,
       footerContent: ["Développement", "Full-Stack", "Alternance", "TypeScript"]
     },
     {
@@ -135,8 +117,6 @@ export class Experiences implements OnInit, OnDestroy {
       subHeader: "IPSIM & PHIM - 2017 à 2023",
       content: "Analyses biostatistiques sur RStudio, plante modèle, culture de bactéries et levures",
       type: "text",
-      colSpan: 1,
-      rowSpan: 1,
       footerContent: ["Recherche", "Biologie des plantes", "Stages"]
     },
     {
@@ -145,8 +125,6 @@ export class Experiences implements OnInit, OnDestroy {
       subHeader: "Histoire d'Or - Juillet à Septembre 2020 + extras",
       content: "Vente, conseil, perçage d’oreilles, SAV, prises de commandes extras sur 2 autres sites en période de Black Friday et Noël",
       type: "text",
-      colSpan: 1,
-      rowSpan: 1,
       footerContent: ["Bijouterie", "Job d'été", "Conseil", "Vente"]
     },
     {
@@ -155,8 +133,6 @@ export class Experiences implements OnInit, OnDestroy {
       subHeader: "Bleu Libellule - Juillet 2020",
       content: "Vente, conseil, mise en rayon, facing",
       type: "text",
-      colSpan: 1,
-      rowSpan: 1,
       footerContent: ["Grossiste coiffure", "Job d'été", "Conseil", "Vente"]
     },
     {
@@ -165,8 +141,6 @@ export class Experiences implements OnInit, OnDestroy {
       subHeader: "Sabor Danza - Septembre 2018 à Novembre 2019",
       content: "Enseignement de 4h de cours par semaine le soir",
       type: "text",
-      colSpan: 1,
-      rowSpan: 1,
       footerContent: ["Enseignement", "École de danse"]
     },
     {
@@ -175,8 +149,6 @@ export class Experiences implements OnInit, OnDestroy {
       subHeader: "Super U - Septembre 2018 à Janvier 2019",
       content: "Rentabilité (nombre d’articles/min/client), gestion des liquidités, fidélisation clientèle",
       type: "text",
-      colSpan: 1,
-      rowSpan: 1,
       footerContent: ["Caissière", "Grande Distribution"]
     },
     {
@@ -185,8 +157,6 @@ export class Experiences implements OnInit, OnDestroy {
       subHeader: "Brioche Dorée - Juin 2017 à Août 2017",
       content: "Vente, préparation de boissons/crêpes, plonge, service à table",
       type: "text",
-      colSpan: 1,
-      rowSpan: 1,
       footerContent: ["Sandwicherie", "Vente", "Préparation", "Restauration rapide"]
     },
     {
@@ -195,8 +165,6 @@ export class Experiences implements OnInit, OnDestroy {
       subHeader: "Carrefour Market - Juillet 2016 à Août 2016",
       content: "Rentabilité (nombre d’articles/min/client), gestion des liquidités, fidélisation clientèle",
       type: "text",
-      colSpan: 1,
-      rowSpan: 1,
       footerContent: ["Caissière", "Grande Distribution"]
     },
   ]

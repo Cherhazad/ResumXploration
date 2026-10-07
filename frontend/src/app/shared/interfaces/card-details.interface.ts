@@ -4,7 +4,7 @@ type CardType = 'text' | 'icon' | 'image'
 
 export interface CardDetails {
   id: string
-  header: string
+  header?: string
   subHeader?: string
   content?: string
   type: CardType
