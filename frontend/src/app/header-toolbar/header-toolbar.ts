@@ -1,30 +1,12 @@
-import {Component, inject, signal} from '@angular/core';
-import {Avatar} from 'primeng/avatar';
-import {Toolbar} from 'primeng/toolbar';
-import {ThemeToggle} from '../theme-toggle/theme-toggle';
-import {ButtonDirective} from 'primeng/button';
-import {ToolbarModule} from 'primeng/toolbar';
-import {ButtonModule} from 'primeng/button';
-import {InputTextModule} from 'primeng/inputtext';
-import {Upload} from '@primeicons/angular/upload';
-import {ToggleSwitch} from 'primeng/toggleswitch';
+import {Component, inject} from '@angular/core';
 import {FormsModule} from '@angular/forms';
-import {Tooltip} from 'primeng/tooltip';
 import {LanguageService} from '../shared/services/language.service';
+import {HamburgerMenu} from '../hamburger-menu/hamburger-menu';
 
 @Component({
   imports: [
-    Avatar,
-    Upload,
-    Toolbar,
-    ThemeToggle,
-    ButtonDirective,
-    InputTextModule,
-    ButtonModule,
-    ToolbarModule,
-    ToggleSwitch,
     FormsModule,
-    Tooltip
+    HamburgerMenu,
   ],
   selector: 'app-header-toolbar',
   styleUrl: './header-toolbar.css',

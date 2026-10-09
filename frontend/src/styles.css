@@ -1,15 +1,112 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 @import "tailwindcss";
 @import "tailwindcss-primeui";
-@import "primeicons/primeicons.css";
 
 @variant dark (&:where(.dark, .dark *));
 
-.glass-card {
-  @apply bg-green-800/10 dark:bg-gray-800/50
-  backdrop-blur-md
-  rounded-2xl
-  p-5
-  shadow-lg
-  border border-white/40 dark:border-white/10;
+* {
+  @apply m-0 p-0;
 }
+
+body {
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+:root {
+  --text-color: white;
+  --color: #B50445;
+  --bg-color: black;
+  --first: white;
+  --second: black;
+  --mob-color: #292428;
+}
+
+.container {
+  @apply max-w-full m-auto
+}
+
+header {
+  @apply bg-(--bg-color) h-22.5 flex items-center justify-center;
+
+  nav {
+    @apply flex items-center justify-between;
+  }
+}
+
+.logo {
+  @apply text-(--first) text-[1.8rem] pl-10 relative font-semibold;
+
+  span {
+    @apply text-(--color)
+  }
+}
+
+.list-darkmode-menu {
+  @apply flex items-center gap-2.5 pr-16;
+
+  ul {
+    @apply flex items-center justify-center gap-8.75;
+
+    li {
+
+      a {
+        @apply relative no-underline text-(--first) text-[18px] font-semibold transition duration-300 ease-[ease];
+
+        &:hover {
+          @apply text-(--color);
+
+          &::before {
+            @apply w-full;
+          }
+        }
+
+        &::before {
+          content: "";
+          @apply absolute -bottom-1.75 left-0 w-0 h-[2.5px] bg-(--color) transition-all duration-300 ease-[ease];
+        }
+      }
+    }
+  }
+
+  .mode {
+    @apply relative flex items-center cursor-pointer select-none
+    text-(--text-color) text-[24px] ml-4;
+
+    .fa-moon,
+    .fa-sun {
+      @apply absolute animate-[animate_0.5s];
+    }
+
+    .fa-sun {
+      @apply invisible opacity-0;
+    }
+
+    input:checked ~ .fa-moon {
+      @apply invisible opacity-0;
+    }
+
+    input:checked ~ .fa-sun {
+      @apply visible opacity-100 animate-[animate_0.5s];
+    }
+
+    input {
+      @apply absolute opacity-0 cursor-pointer;
+    }
+  }
+
+  @keyframes animate {
+    0% {
+      transform: rotate(-360deg) scale(0);
+      opacity: 0;
+    }
+
+    75% {
+      transform: rotate(25deg);
+    }
+  }
+
+}
+

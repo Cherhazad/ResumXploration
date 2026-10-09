@@ -2,14 +2,9 @@ import {Component, inject} from '@angular/core';
 import {CardDetails} from '../shared/interfaces/card-details.interface';
 import {ScrollService} from '../shared/services/scroll.service';
 import {Subscription} from 'rxjs';
-import {Card} from 'primeng/card';
-import {NgClass} from '@angular/common';
 
 @Component({
-  imports: [
-    Card,
-    NgClass
-  ],
+  imports: [],
   selector: 'app-skills',
   styleUrl: './skills.css',
   templateUrl: './skills.html',

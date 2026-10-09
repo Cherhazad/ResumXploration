@@ -1,16 +1,11 @@
 import {Component, computed, inject, OnDestroy, OnInit} from '@angular/core';
 import {LanguageService} from '../shared/services/language.service';
 import {CardDetails} from '../shared/interfaces/card-details.interface';
-import {Card} from 'primeng/card';
-import {Tag} from 'primeng/tag';
 import {Subscription} from 'rxjs';
 import {ScrollService} from '../shared/services/scroll.service';
 
 @Component({
-  imports: [
-    Card,
-    Tag
-  ],
+  imports: [],
   selector: 'app-experiences',
   styleUrl: './experiences.css',
   templateUrl: './experiences.html',
