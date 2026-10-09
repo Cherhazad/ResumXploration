@@ -1,55 +1,28 @@
-<p-toolbar>
-  <ng-template #start>
-    <div class="flex items-center gap-2">
-      <p-avatar image="/profilePicture.jpeg" shape="circle"/>
-      <p>Chérhazad BOUSTANI</p>
-    </div>
-  </ng-template>
-  <ng-template #center>
-    <a
-      pButton
-      iconOnly
-      class="mr-2"
-      variant="text"
-      severity="secondary"
-      href="https://www.linkedin.com/in/chérhazad-boustani"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <i class="pi pi-linkedin text-xl!"></i>
-    </a>
-    <a
-      pButton
-      iconOnly
-      class="mr-2"
-      variant="text"
-      severity="secondary"
-      href="https://github.com/Cherhazad"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <i class="pi pi-github text-xl!"></i>
-    </a>
-    <button pButton iconOnly variant="text" severity="secondary" pTooltip="Download my resume">
-      <svg data-p-icon="upload" class="w-5! h-5!" (click)="downloadPdf()"/>
-    </button>
-  </ng-template>
-  <ng-template #end>
-    <div class="flex items-center gap-4">
-      <div class="flex items-center gap-2">
-        <label for="switch">Fr</label>
-        <p-toggleswitch
-          [ngModel]="languageService.isEnglish()"
-          (ngModelChange)="languageService.isEnglish.set($event)"
-          inputId="switch"
-          [pt]="{
-          slider: { class: 'bg-gray-300/70! rounded-md! dark:bg-slate-700/80! rounded-md!' },
-          handle: { class: 'bg-gray-500! dark:bg-slate-400!'},
-        }"
-        />
-        <label for="switch">Eng</label>
+<header>
+  <div class="container">
+    <nav>
+      <div class="logo">
+        <a href="#home"><span>Chérhazad</span> BOUSTANI</a>
       </div>
-      <app-theme-toggle></app-theme-toggle>
-    </div>
-  </ng-template>
-</p-toolbar>
+
+      <div class="list-darkmode-menu">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#home">Skills</a></li>
+          <li><a href="#home">Projects</a></li>
+          <li><a href="#home">Experiences</a></li>
+          <li><a href="#home">Contact</a></li>
+        </ul>
+
+        <label class="mode">
+          <input type="checkbox" checked="checked" id="darkModeButton"/>
+          <i class="fa-solid fa-sun"></i>
+          <i class="fa-solid fa-moon"></i>
+        </label>
+        <app-hamburger-menu/>
+      </div>
+
+    </nav>
+  </div>
+</header>
+

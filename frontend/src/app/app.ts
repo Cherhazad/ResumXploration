@@ -1,17 +1,11 @@
 import {Component, signal} from '@angular/core';
-import {Resume} from './resume/resume';
-import {CardModule} from 'primeng/card';
 import {HeaderToolbar} from './header-toolbar/header-toolbar';
-import {Experiences} from './experiences/experiences';
-import {Skills} from './skills/skills';
+import {Home} from './home/home';
 
 @Component({
   imports: [
-    Resume,
-    CardModule,
     HeaderToolbar,
-    Experiences,
-    Skills
+    Home,
   ],
   selector: 'app-root',
   styleUrl: './app.css',

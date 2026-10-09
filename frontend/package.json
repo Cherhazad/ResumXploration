@@ -21,8 +21,6 @@
     "@tailwindcss/postcss": "^4.3.3",
     "devicons": "^2.0.1",
     "postcss": "^8.5.28",
-    "primeicons": "^8.0.2",
-    "primeng": "^22.1.1",
     "rxjs": "~7.8.0",
     "tailwindcss": "^4.3.3",
     "tailwindcss-primeui": "^0.6.1",

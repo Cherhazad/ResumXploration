@@ -1,10 +1,10 @@
-import { Injectable, signal, effect } from '@angular/core';
+import {Injectable, signal, effect} from '@angular/core';
 
 export type Theme = 'light' | 'dark';
 
 const STORAGE_KEY = 'theme';
 
-@Injectable({ providedIn: 'root' })
+@Injectable({providedIn: 'root'})
 export class ThemeService {
   readonly theme = signal<Theme>(this.getInitialTheme());
 
@@ -18,10 +18,6 @@ export class ThemeService {
 
   toggle(): void {
     this.theme.update(t => (t === 'dark' ? 'light' : 'dark'));
-  }
-
-  setTheme(theme: Theme): void {
-    this.theme.set(theme);
   }
 
   private getInitialTheme(): Theme {

@@ -1,6 +1,4 @@
 import {Component, computed, inject} from '@angular/core';
-import {Card} from 'primeng/card';
-import {NgClass, NgOptimizedImage} from '@angular/common';
 import {LanguageService} from '../shared/services/language.service';
 import {CardDetails} from '../shared/interfaces/card-details.interface';
 import {ScrollService} from '../shared/services/scroll.service';
@@ -8,11 +6,7 @@ import {ScrollService} from '../shared/services/scroll.service';
 type LangType = 'fr' | 'eng';
 
 @Component({
-  imports: [
-    Card,
-    NgClass,
-    NgOptimizedImage,
-  ],
+  imports: [],
   selector: 'app-resume',
   styleUrl: './resume.css',
   templateUrl: './resume.html',
