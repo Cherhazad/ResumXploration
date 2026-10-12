@@ -1,12 +1,10 @@
 import {Component, inject} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {LanguageService} from '../shared/services/language.service';
-import {HamburgerMenu} from '../hamburger-menu/hamburger-menu';
 
 @Component({
   imports: [
     FormsModule,
-    HamburgerMenu,
   ],
   selector: 'app-header-toolbar',
   styleUrl: './header-toolbar.css',
@@ -21,4 +19,17 @@ export class HeaderToolbar {
     link.href = '/CV.pdf'
     link.click()
   }
+
+  isActive = false;
+  isDarkMode = false;
+
+  toggle(): void {
+    this.isActive = !this.isActive;
+  }
+
+  toggleDarkMode(): void {
+    this.isDarkMode = !this.isDarkMode;
+    document.body.classList.toggle('dark-mode', this.isDarkMode)
+  }
+
 }

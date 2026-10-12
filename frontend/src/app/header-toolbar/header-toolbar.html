@@ -2,11 +2,11 @@
   <div class="container">
     <nav>
       <div class="logo">
-        <a href="#home"><span>Chérhazad</span> BOUSTANI</a>
+        <a href="#home"><span>Chérhazad</span> Boustani</a>
       </div>
 
       <div class="list-darkmode-menu">
-        <ul>
+        <ul [class.active]="isActive">
           <li><a href="#home">Home</a></li>
           <li><a href="#home">Skills</a></li>
           <li><a href="#home">Projects</a></li>
@@ -14,13 +14,20 @@
           <li><a href="#home">Contact</a></li>
         </ul>
 
-        <label class="mode">
-          <input type="checkbox" checked="checked" id="darkModeButton"/>
-          <i class="fa-solid fa-sun"></i>
-          <i class="fa-solid fa-moon"></i>
-        </label>
-        <app-hamburger-menu/>
+        <div class="flex items-center gap-10">
+          <label class="mode">
+            <input type="checkbox" checked="checked" id="darkModeButton" (change)="toggleDarkMode()"/>
+            <i class="fa-solid fa-moon"></i>
+            <i class="fa-solid fa-sun"></i>
+          </label>
+          <button class="hamburger" [class.active]="isActive" (click)="toggle()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </button>
+        </div>
       </div>
+
 
     </nav>
   </div>

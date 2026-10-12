@@ -1,1 +1,152 @@
+@reference "tailwindcss";
+:host {
+  @apply block w-full;
+}
 
+header {
+  @apply bg-(--bg-color) h-22.5 flex items-center justify-center px-12.5;
+
+  nav {
+    @apply flex items-center justify-between w-full pr-10;
+  }
+}
+
+.logo {
+  @apply text-(--first) text-[1.8rem] relative font-semibold;
+
+  span {
+    @apply text-(--color)
+  }
+}
+
+.list-darkmode-menu {
+  @apply flex items-center gap-2.5;
+
+  ul {
+    @apply flex items-center justify-center gap-8.75;
+
+    li {
+
+      a {
+        @apply relative no-underline text-(--first) text-[18px] font-semibold transition duration-300 ease-[ease];
+
+        &:hover {
+          @apply text-(--color);
+
+          &::before {
+            @apply w-full;
+          }
+        }
+
+        &::before {
+          content: "";
+          @apply absolute -bottom-1.75 left-0 w-0 h-[2.5px] bg-(--color) transition-all duration-300 ease-[ease];
+        }
+      }
+    }
+  }
+
+  .mode {
+    @apply relative flex items-center cursor-pointer select-none
+    text-(--text-color) text-[24px] ml-4;
+
+    .fa-moon,
+    .fa-sun {
+      @apply absolute;
+    }
+
+    .fa-sun {
+      @apply invisible opacity-0;
+    }
+
+    input:checked ~ .fa-moon {
+      @apply invisible opacity-0;
+    }
+
+    input:checked ~ .fa-sun {
+      @apply visible opacity-100;
+    }
+
+    input {
+      @apply absolute opacity-0 cursor-pointer;
+    }
+  }
+}
+
+.hamburger {
+  @apply flex flex-col justify-between w-6 h-5 cursor-pointer hidden;
+
+  .bar {
+    @apply block w-full h-0.5 bg-(--first) transition-all duration-300;
+  }
+
+  &.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  &.active .bar:nth-child(2) {
+    @apply opacity-0;
+  }
+
+  &.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+}
+
+
+@media screen and (max-width: 992px) {
+
+  header {
+    @apply bg-(--bg-color) sticky top-0 w-full h-22.5 z-9;
+
+    nav {
+      @apply pr-0;
+
+      .list-darkmode-menu {
+        @apply ml-auto;
+
+        ul {
+          @apply fixed top-22.5 -left-full max-w-[60%] w-full h-screen bg-(--mob-color) items-start flex justify-start flex-col py-7.5 px-12.5 gap-7.5 transition-all duration-300 ease-in-out;
+
+          &.active {
+            @apply left-0;
+          }
+        }
+      }
+    }
+  }
+
+  .hamburger {
+    @apply flex;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  header {
+    nav {
+      .list-darkmode-menu {
+        ul {
+          @apply pt-12.5 pl-12.5;
+
+          li {
+            a {
+              @apply text-[20px];
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 567px) {
+  header {
+    nav {
+      .logo {
+        a {
+          @apply text-[24px];
+        }
+      }
+    }
+  }
+}
