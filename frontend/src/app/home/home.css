@@ -1,0 +1,201 @@
+@reference "tailwindcss";
+
+:host {
+  @apply block w-full;
+}
+
+.home {
+  @apply bg-(--bg-color) absolute top-0 w-full min-h-screen -z-10 pt-70 pb-12.5;
+
+  .home-info {
+    @apply flex items-center justify-center;
+  }
+
+  .btn {
+    @apply flex items-center gap-2 mt-5;
+
+    button {
+      @apply text-[15px] px-6 py-2 rounded-full bg-transparent text-(--color) cursor-pointer transition-all duration-300 ease-in-out border border-(--color);
+
+      &:hover {
+        @apply text-(--first) bg-(--color);
+      }
+    }
+  }
+
+  .left {
+    @apply flex-1 px-10;
+
+    h3 {
+      @apply text-[2.5em] font-bold tracking-wide text-(--first);
+    }
+
+    h1 {
+      @apply text-[3.7em] font-bold tracking-tight text-(--first);
+    }
+
+    h4 {
+      @apply text-(--first) text-[2.2em] font-bold mb-5;
+    }
+
+    span {
+      @apply text-(--color);
+    }
+
+    p {
+      @apply w-[90%] text-lg text-(--first) mb-5;
+    }
+
+    .social {
+      @apply flex items-center gap-2.5 mt-5;
+
+      a {
+        @apply no-underline text-(--color) rounded-full w-11 h-11 flex items-center justify-center transition-all duration-300 ease-in-out border border-(--color);
+
+        i {
+          @apply text-[20px];
+        }
+
+        &:hover {
+          @apply text-(--first) bg-(--color) -translate-y-1.5;
+        }
+      }
+    }
+  }
+
+  .right {
+    @apply flex-1 flex justify-end pr-20;
+
+    .profile {
+      @apply flex justify-end;
+
+      img {
+        @apply w-112.5 h-112.5 object-cover object-top rounded-full border-[3px] border-(--color) shadow-[0_0_40px_var(--color)] cursor-pointer transition-all duration-300 ease-in-out;
+
+        &:hover {
+          @apply transform scale-105 shadow-[0_0_80px_var(--color)];
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .home {
+    @apply px-12.5 py-62.5;
+
+    .home-info {
+      .left {
+        h1 {
+          @apply text-[4em];
+        }
+      }
+
+      .right {
+        @apply justify-center pr-0;
+
+        .profile {
+
+          img {
+            @apply w-100 h-100;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .home {
+    @apply relative px-12.5 py-7.5;
+
+    .home-info {
+      @apply flex flex-col-reverse;
+
+      .left {
+
+        @apply pt-12.5;
+
+        p {
+          @apply w-full;
+        }
+
+      }
+
+      .right {
+        .profile {
+          @apply mt-6.25;
+
+          img {
+            @apply w-93.75 h-93.75 shadow-[0_0_30px_var(--color)];
+
+            &:hover {
+              @apply shadow-[0_0_60px_var(--color)];
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+
+  .home {
+    @apply p-2;
+
+    .home-info {
+      .left {
+
+        h1 {
+          @apply text-[3.6em];
+        }
+
+        h4 {
+          @apply text-[1.8em];
+        }
+
+        p {
+          @apply text-[14px];
+        }
+      }
+
+      .right {
+        .profile {
+          img {
+            @apply w-87.5 h-87.5 shadow-[0_0_30px_var(--color)];
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 567px) {
+  .home {
+    .home-info {
+      .left {
+        h3 {
+          @apply text-[1.6em];
+        }
+
+        h1 {
+          @apply text-[2em];
+        }
+
+        h4 {
+          @apply text-[1.2em];
+        }
+
+      }
+
+      .right {
+        .profile {
+          img {
+            @apply w-70 h-70 shadow-[0_0_30px_var(--color)];
+          }
+        }
+      }
+    }
+  }
+}
