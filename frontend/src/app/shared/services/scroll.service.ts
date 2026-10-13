@@ -8,6 +8,6 @@ export class ScrollService {
   scroll$ = this.scrollTarget$.asObservable()
 
   scrollTo(id: string): void {
-    this.scrollTarget$.next(id)
+    this.scrollTarget$.next(id);
   }
 }

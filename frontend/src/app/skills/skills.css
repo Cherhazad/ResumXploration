@@ -1,0 +1,31 @@
+@reference "tailwindcss";
+
+.skills {
+  @apply relative bg-(--bg-color) w-full min-h-screen pt-10 pb-12.5;
+
+  h3 {
+    @apply text-[2.5em] font-bold tracking-wide text-(--first) flex justify-center pb-10;
+  }
+
+  .skills-infos {
+    @apply flex items-center justify-center;
+
+  }
+
+  .skill-items {
+    @apply flex items-center gap-2.5 mt-5;
+
+    a {
+      @apply no-underline text-(--color) rounded-2xl w-25 h-25 flex items-center justify-center transition-all duration-300 ease-in-out border border-(--color);
+
+      i {
+        @apply text-5xl;
+      }
+
+      &:hover {
+        @apply text-(--first) bg-(--color) -translate-y-2.5;
+      }
+    }
+  }
+}
+

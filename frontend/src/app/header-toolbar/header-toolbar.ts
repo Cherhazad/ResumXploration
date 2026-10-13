@@ -1,6 +1,7 @@
 import {Component, inject} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {LanguageService} from '../shared/services/language.service';
+import {ScrollService} from '../shared/services/scroll.service';
 
 @Component({
   imports: [
@@ -12,13 +13,6 @@ import {LanguageService} from '../shared/services/language.service';
 })
 export class HeaderToolbar {
   protected languageService = inject(LanguageService);
-
-  downloadPdf() {
-    const link = document.createElement('a')
-    link.download = 'Résumé Chérhazad Boustani.pdf'
-    link.href = '/CV.pdf'
-    link.click()
-  }
 
   isActive = false;
   isDarkMode = false;
@@ -32,4 +26,9 @@ export class HeaderToolbar {
     document.body.classList.toggle('dark-mode', this.isDarkMode)
   }
 
+  private scrollService = inject(ScrollService);
+
+  scrollToSection(id: string): void {
+    this.scrollService.scrollTo(id);
+  }
 }

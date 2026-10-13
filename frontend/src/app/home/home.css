@@ -5,7 +5,7 @@
 }
 
 .home {
-  @apply bg-(--bg-color) absolute top-0 w-full min-h-screen -z-10 pt-70 pb-12.5;
+  @apply relative bg-(--bg-color) w-full min-h-screen pt-10 pb-12.5;
 
   .home-info {
     @apply flex items-center justify-center;
