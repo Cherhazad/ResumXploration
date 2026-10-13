@@ -7,11 +7,11 @@
 
       <div class="list-darkmode-menu">
         <ul [class.active]="isActive">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#home">Skills</a></li>
-          <li><a href="#home">Projects</a></li>
-          <li><a href="#home">Experiences</a></li>
-          <li><a href="#home">Contact</a></li>
+          <li><a (click)="scrollToSection('home')">Accueil</a></li>
+          <li><a (click)="scrollToSection('skills')">Compétences</a></li>
+          <li><a>Projets</a></li>
+          <li><a>Expériences</a></li>
+          <li><a>Contact</a></li>
         </ul>
 
         <div class="flex items-center gap-10">
