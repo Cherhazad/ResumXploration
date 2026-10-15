@@ -1,0 +1,9 @@
+@reference "tailwindcss";
+
+.projects {
+  @apply relative bg-(--bg-color) w-full min-h-screen pt-10 pb-12.5;
+
+  h3 {
+    @apply text-[2.5em] font-bold tracking-wide text-(--first) flex justify-center pb-20;
+  }
+}

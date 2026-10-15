@@ -30,7 +30,7 @@
 }
 
 .item {
-  @apply opacity-0 transform -translate-y-2.5 transition duration-60 ease-in-out;
+  @apply opacity-0 transform -translate-y-2.5 transition duration-40 ease-in-out;
 }
 
 .item.show {

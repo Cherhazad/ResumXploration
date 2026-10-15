@@ -41,7 +41,7 @@ section {
 }
 
 .hide {
-  @apply opacity-0 translate-y-8 transition-all duration-700 ease-in-out blur-[5px] -translate-x-100;
+  @apply opacity-0 translate-y-8 transition-all duration-400 ease-in-out blur-[5px] -translate-x-80;
 }
 
 .show {
