@@ -4,7 +4,7 @@
   @apply relative bg-(--bg-color) w-full min-h-screen pt-10 pb-12.5;
 
   h3 {
-    @apply text-[2.5em] font-bold tracking-wide text-(--first) flex justify-center pb-10;
+    @apply text-[2.5em] font-bold tracking-wide text-(--first) flex justify-center pb-20;
   }
 
   .skills-infos {
@@ -15,7 +15,7 @@
   .skill-items {
     @apply flex items-center gap-2.5 mt-5;
 
-    a {
+    div {
       @apply no-underline text-(--color) rounded-2xl w-25 h-25 flex items-center justify-center transition-all duration-300 ease-in-out border border-(--color);
 
       i {
@@ -24,6 +24,146 @@
 
       &:hover {
         @apply text-(--first) bg-(--color) -translate-y-2.5;
+      }
+    }
+  }
+}
+
+.item {
+  @apply opacity-0 transform -translate-y-2.5 transition duration-60 ease-in-out;
+}
+
+.item.show {
+  @apply opacity-100 transform translate-y-0;
+}
+
+@media (prefers-reduced-motion) {
+  .item {
+    @apply transition-none;
+  }
+}
+
+@media screen and (max-width: 1340px) {
+  .skills {
+    .skills-infos {
+      .skill-items {
+        @apply flex gap-2.5;
+
+        div {
+          @apply w-20 h-20;
+
+          i {
+            @apply text-3xl;
+          }
+
+          span {
+            @apply text-sm;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .skills {
+    h3 {
+      @apply text-[2.1em] pb-18;
+    }
+
+    .skills-infos {
+      .skill-items {
+        @apply grid grid-cols-6 gap-2.5;
+
+        div {
+          @apply w-25 h-25;
+
+          i {
+            @apply text-3xl;
+          }
+
+          span {
+            @apply text-[18px];
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .skills {
+    h3 {
+      @apply text-[1.8em] pb-16;
+    }
+
+    .skills-infos {
+      .skill-items {
+        @apply grid grid-cols-6 gap-2.5;
+
+        div {
+          @apply w-20 h-20;
+
+          i {
+            @apply text-2xl;
+          }
+
+          span {
+            @apply text-[15px];
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 562px) {
+  .skills {
+    .skills-infos {
+      .skill-items {
+        @apply grid grid-cols-4 gap-2.5;
+
+        a {
+          @apply w-24 h-24;
+
+          i {
+            @apply text-3xl;
+          }
+
+          &:hover {
+            @apply -translate-y-1;
+          }
+
+          span {
+            @apply text-[16px];
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .skills {
+    h3 {
+      @apply text-[1.8em] pb-14;
+    }
+
+    .skills-infos {
+      .skill-items {
+        @apply grid grid-cols-4 gap-2.5;
+
+        div {
+          @apply w-16 h-16;
+
+          i {
+            @apply text-xl;
+          }
+
+          span {
+            @apply text-[10px];
+          }
+        }
       }
     }
   }

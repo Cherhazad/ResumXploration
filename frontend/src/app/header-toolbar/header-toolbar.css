@@ -12,7 +12,7 @@ header {
 }
 
 .logo {
-  @apply text-(--first) text-[1.8rem] relative font-semibold;
+  @apply text-(--first) text-[1.8rem] font-semibold;
 
   span {
     @apply text-(--color)
@@ -141,6 +141,8 @@ header {
 
 @media screen and (max-width: 567px) {
   header {
+    @apply px-8;
+
     nav {
       .logo {
         a {
