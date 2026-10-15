@@ -21,7 +21,7 @@ body {
   --bg-color: black;
   --first: white;
   --second: black;
-  --mob-color: #292428;
+  --mob-color: #46011B;
 }
 
 body.dark-mode {
@@ -37,6 +37,20 @@ body.dark-mode {
 }
 
 section {
-  @apply grid;
+  @apply grid min-h-screen;
+}
+
+.hide {
+  @apply opacity-0 translate-y-8 transition-all duration-700 ease-in-out blur-[5px] -translate-x-100;
+}
+
+.show {
+  @apply opacity-100 translate-y-0 blur-none translate-x-0;
+}
+
+@media (prefers-reduced-motion) {
+  .hide {
+    @apply transition-none;
+  }
 }
 

@@ -1,43 +1,13 @@
-<!--
-<div id="skills" class="mx-auto mt-6 px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12 pb-16">
-  <p class="text-2xl">Compétences & outils utilisés</p>
-  <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-4">
-    @for (skill of skills; track skill) {
-      <p-card
-        class="h-full w-full"
-        [header]="skill.header"
-        [subheader]="skill.subHeader"
-        [pt]="{
-            title: {
-              class: skill.headerSize === 'xl' ? 'text-3xl!' :
-                     skill.headerSize === 'sm' ? 'text-sm!' :
-                     ''
-            },
-            root: { class: 'h-full flex flex-col' },
-            body: { class: 'flex flex-col flex-1' },
-            content: { class: 'flex-1' }
-          }"
-      >
-        <div class="flex flex-col items-center gap-2">
-          <i [ngClass]="[skill.icon, 'text-6xl', 'colored']"></i>
-          <span>{{ skill.content }}</span>
-        </div>
-      </p-card>
-    }
-  </div>
-</div>
--->
-
 <section class="skills" id="skills">
-  <div class="container">
+  <div class="container hide">
     <h3>Compétences</h3>
     <div class="skills-infos">
       <div class="skill-items">
-        @for (skill of skills; track skill) {
-          <a href="#" class="flex flex-col items-center gap-2">
+        @for (skill of skills; track skill; let i = $index) {
+          <div class="flex flex-col items-center gap-2 item" [style.transition-delay]="(i * 60) + 'ms'">
             <i [class]="skill.icon"></i>
             <span>{{ skill.content }}</span>
-          </a>
+          </div>
         }
       </div>
     </div>
