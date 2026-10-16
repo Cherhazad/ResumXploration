@@ -4,7 +4,7 @@
     <div class="skills-infos">
       <div class="skill-items">
         @for (skill of skills; track skill; let i = $index) {
-          <div class="flex flex-col items-center gap-2 item" [style.transition-delay]="(i * 60) + 'ms'">
+          <div class="flex flex-col items-center gap-2 item" [style.transition-delay]="(i * 40) + 'ms'">
             <i [class]="skill.icon"></i>
             <span>{{ skill.content }}</span>
           </div>
