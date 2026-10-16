@@ -1,9 +1,172 @@
 @reference "tailwindcss";
 
 .projects {
-  @apply relative bg-(--bg-color) w-full min-h-screen pt-10 pb-12.5;
+  @apply relative bg-(--bg-color) w-full pt-20 pb-12.5;
 
   h3 {
-    @apply text-[2.5em] font-bold tracking-wide text-(--first) flex justify-center pb-20;
+    @apply text-[2.5em] font-bold tracking-wide text-(--first) flex justify-center;
+  }
+
+  .project-infos {
+    @apply flex items-center justify-center;
+  }
+
+  .projects {
+    @apply flex items-center justify-center gap-2.5 mt-5 px-28;
+
+    .item {
+      @apply flex flex-col w-113.5 h-130 items-center gap-2 transform -translate-y-2.5 no-underline text-(--color) rounded-2xl justify-center transition-all duration-300 ease-in-out border-[3px] border-(--color) shadow-[0_0_40px_var(--color)];
+
+      img {
+        @apply w-72 h-72 rounded-2xl object-cover object-bottom p-2;
+      }
+
+      .item-info {
+        @apply flex flex-col items-center gap-2 mt-3 px-5 pb-5;
+
+        p {
+          @apply text-center;
+        }
+
+        span {
+          @apply text-2xl font-semibold text-center text-(--first);
+        }
+      }
+
+
+      .btn {
+        @apply flex items-center gap-2 mt-5 ;
+
+        button, a {
+          @apply text-[15px] px-6 py-2 rounded-full bg-transparent text-(--color) cursor-pointer transition-all duration-300 ease-in-out border border-(--color);
+        }
+
+        button:hover, a:hover {
+          @apply text-(--second) bg-(--color) -translate-y-1.5;
+        }
+      }
+
+      &:hover {
+        @apply transform scale-105;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .projects {
+    h3 {
+      @apply text-[1.8em] pb-0;
+    }
+
+    .projects {
+      @apply mt-0;
+
+      .item {
+        @apply w-98 h-110;
+
+        img {
+          @apply w-56 h-56;
+        }
+
+        .item-info {
+          @apply mt-0 px-4 pb-4;
+
+          span {
+            @apply text-xl;
+          }
+
+          p {
+            @apply text-sm;
+          }
+
+          .btn {
+            @apply mt-4 ;
+
+            button, a {
+              @apply text-[14px] px-5 py-1.5;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .projects {
+    .projects {
+      .item {
+        @apply w-84 h-96;
+
+        img {
+          @apply w-52 h-52;
+        }
+
+        .item-info {
+          @apply mt-0 px-4 pb-4;
+
+          span {
+            @apply text-xl;
+          }
+
+          p {
+            @apply text-sm;
+          }
+
+          .btn {
+            @apply mt-4 ;
+
+            button, a {
+              @apply text-[14px] px-5 py-1.5;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 562px) {
+  .projects {
+    .projects {
+      @apply px-10;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .projects {
+    .projects {
+      @apply px-4;
+
+      .item {
+        @apply w-72 h-80;
+
+        img {
+          @apply w-42 h-42;
+        }
+
+        .item-info {
+          @apply px-3 pb-2;
+
+          span {
+            @apply text-base;
+          }
+
+          p {
+            @apply text-xs;
+          }
+
+          .btn {
+            @apply mt-2 ;
+
+            button, a {
+              @apply text-[12px];
+            }
+          }
+        }
+      }
+    }
   }
 }

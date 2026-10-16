@@ -1,7 +1,7 @@
 @reference "tailwindcss";
 
 .skills {
-  @apply relative bg-(--bg-color) w-full min-h-screen pt-10 pb-12.5;
+  @apply relative bg-(--bg-color) w-full pt-10 pb-12.5;
 
   h3 {
     @apply text-[2.5em] font-bold tracking-wide text-(--first) flex justify-center pb-20;
@@ -9,7 +9,6 @@
 
   .skills-infos {
     @apply flex items-center justify-center;
-
   }
 
   .skill-items {
@@ -23,7 +22,7 @@
       }
 
       &:hover {
-        @apply text-(--first) bg-(--color) -translate-y-2.5;
+        @apply text-(--second) bg-(--color) -translate-y-2.5;
       }
     }
   }
