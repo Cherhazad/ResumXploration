@@ -30,7 +30,7 @@ export class App implements AfterViewInit {
   }, {threshold: 0, rootMargin: '0px 0px -50px 0px'})
 
   ngAfterViewInit(): void {
-    const hiddenElements = document.querySelectorAll('.hide')
+    const hiddenElements = document.querySelectorAll('.hide-left, .hide-right')
     const els = document.querySelectorAll('.item')
 
     if (this.isMobile) {
