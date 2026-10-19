@@ -1,17 +1,25 @@
 @reference "tailwindcss";
 
+:host {
+  @apply block w-full;
+}
+
 .projects {
-  @apply relative bg-(--bg-color) w-full pt-20 pb-12.5;
+  @apply relative bg-(--bg-color) w-full py-52;
 
   h3 {
-    @apply text-[2.5em] font-bold tracking-wide text-(--first) flex justify-center;
+    @apply text-[2.5em] font-bold tracking-wide text-(--first) flex justify-center pb-20;
+  }
+
+  .presentation {
+    @apply text-center text-lg text-(--first) pb-20 px-44;
   }
 
   .project-infos {
     @apply flex items-center justify-center;
   }
 
-  .projects {
+  .project {
     @apply flex items-center justify-center gap-2.5 mt-5 px-28;
 
     .item {
@@ -35,31 +43,37 @@
 
 
       .btn {
-        @apply flex items-center gap-2 mt-5 ;
+        @apply flex items-center gap-2 mt-5;
 
         button, a {
           @apply text-[15px] px-6 py-2 rounded-full bg-transparent text-(--color) cursor-pointer transition-all duration-300 ease-in-out border border-(--color);
         }
 
         button:hover, a:hover {
-          @apply text-(--second) bg-(--color) -translate-y-1.5;
+          @apply text-(--second) bg-(--color);
         }
       }
-
-      &:hover {
-        @apply transform scale-105;
-      }
     }
+  }
+}
+
+@media (hover: hover) {
+  .item:hover {
+    @apply scale-105;
   }
 }
 
 @media screen and (max-width: 992px) {
   .projects {
     h3 {
-      @apply text-[1.8em] pb-0;
+      @apply text-[1.8em];
     }
 
-    .projects {
+    .presentation {
+      @apply pb-18 px-32;
+    }
+
+    .project {
       @apply mt-0;
 
       .item {
@@ -95,7 +109,17 @@
 
 @media screen and (max-width: 700px) {
   .projects {
-    .projects {
+    @apply py-48;
+
+    h3 {
+      @apply pb-16;
+    }
+
+    .presentation {
+      @apply text-sm pb-14 px-24;
+    }
+
+    .project {
       .item {
         @apply w-84 h-96;
 
@@ -129,7 +153,17 @@
 
 @media screen and (max-width: 562px) {
   .projects {
-    .projects {
+    @apply py-36;
+
+    h3 {
+      @apply pb-12;
+    }
+
+    .presentation {
+      @apply text-xs px-18;
+    }
+
+    .project {
       @apply px-10;
     }
   }
@@ -137,7 +171,13 @@
 
 @media screen and (max-width: 400px) {
   .projects {
-    .projects {
+    @apply py-28;
+
+    .presentation {
+      @apply text-xs px-12;
+    }
+
+    .project {
       @apply px-4;
 
       .item {
@@ -170,3 +210,4 @@
     }
   }
 }
+

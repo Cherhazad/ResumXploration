@@ -43,7 +43,7 @@
     }
 
     p {
-      @apply w-[90%] text-lg text-(--first) mb-5;
+      @apply w-[90%] text-lg text-(--first) mb-8;
     }
 
     .social {

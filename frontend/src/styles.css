@@ -37,11 +37,15 @@ body.dark-mode {
 }
 
 section {
-  @apply grid min-h-screen;
+  @apply grid;
 }
 
-.hide {
-  @apply opacity-0 translate-y-8 transition-all duration-400 ease-in-out blur-[5px] -translate-x-80;
+.hide-left {
+  @apply opacity-0 -translate-y-8 transition-all duration-400 ease-in-out blur-[5px] -translate-x-80;
+}
+
+.hide-right {
+  @apply opacity-0 -translate-y-8 transition-all duration-400 ease-in-out blur-[5px] translate-x-80;
 }
 
 .show {

@@ -28,7 +28,7 @@ header {
     li {
 
       a {
-        @apply relative no-underline text-(--first) text-[18px] font-semibold transition duration-300 ease-[ease];
+        @apply relative no-underline text-(--first) text-[18px] font-semibold transition duration-300 ease-[ease] cursor-pointer;
 
         &:hover {
           @apply text-(--color);

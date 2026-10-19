@@ -1,10 +1,14 @@
 @reference "tailwindcss";
 
 .skills {
-  @apply relative bg-(--bg-color) w-full pt-10 pb-12.5;
+  @apply relative bg-(--bg-color) w-full pt-52 pb-12.5;
 
   h3 {
-    @apply text-[2.5em] font-bold tracking-wide text-(--first) flex justify-center pb-20;
+    @apply text-[2.5em] font-bold tracking-wide text-(--first) flex justify-center pb-8;
+  }
+
+  p {
+    @apply text-center text-lg text-(--first) pb-20 px-4;
   }
 
   .skills-infos {
@@ -67,7 +71,11 @@
 @media screen and (max-width: 1100px) {
   .skills {
     h3 {
-      @apply text-[2.1em] pb-18;
+      @apply text-[2.1em];
+    }
+
+    p {
+      @apply pb-18;
     }
 
     .skills-infos {
@@ -93,7 +101,11 @@
 @media screen and (max-width: 700px) {
   .skills {
     h3 {
-      @apply text-[1.8em] pb-16;
+      @apply text-[1.8em];
+    }
+
+    p {
+      @apply text-[1em] pb-14;
     }
 
     .skills-infos {
@@ -118,6 +130,10 @@
 
 @media screen and (max-width: 562px) {
   .skills {
+    p {
+      @apply text-[0.8em] pb-12;
+    }
+
     .skills-infos {
       .skill-items {
         @apply grid grid-cols-4 gap-2.5;
